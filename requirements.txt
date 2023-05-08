@@ -2,5 +2,4 @@ audio_recorder_streamlit
 googletrans
 SpeechRecognition
 gTTS
-microbit
-googletrans==4.0.0-rc1
+
