@@ -3,3 +3,4 @@ googletrans
 SpeechRecognition
 gTTS
 microbit
+googletrans==4.0.0-rc1
