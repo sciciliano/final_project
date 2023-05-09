@@ -15,14 +15,21 @@ translator = Translator()
 keywords = ['bella','lungo','agile']
 var = choice(keywords)
 
+def right_answer():
+    st.write('Right!')
+    st.session_state.counter = st.session_state.counter
+    
+def wrong_answer():
+    st.write('Nope, try again!')
+    st.session_state.counter -=1
+
 adj_trans = translator.translate(var,dest='en')
 adj_answer = st.text_input('Write your answer here:','')
 
 if adj_answer is not None:
     if adj_answer == adj_trans:
-        feedback = st.write('Right!')
+        right_answer()
     elif adj_answer  != adj_trans:
-        feedback = st.write('Nope, try again!')
-        st.session_state.counter -= 1
+        wrong_answer()
 
 st.write(st.session_state.counter)
