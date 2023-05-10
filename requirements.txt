@@ -1,5 +1,3 @@
 audio_recorder_streamlit
 googletrans
 SpeechRecognition
-gTTS
-
