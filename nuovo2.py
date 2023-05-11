@@ -2,14 +2,13 @@ from random import choice
 import streamlit as st
 from googletrans import Translator
 
+word_input = st.text_input('inserisci la tua traduzione: ','')
+
+translator = Translator()
 words = ['mela','pera','pomodoro']
 word_pic = choice(words)
 st.write(word_pic)
-
-translator = Translator()
 word_trans = translator.translate(word_pic,src='it', dest= 'en')
-
-word_input = st.text_input('inserisci la tua traduzione: ','')
 
 if word_input:
   if word_trans.text == word_input:
