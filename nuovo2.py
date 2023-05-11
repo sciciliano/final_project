@@ -18,6 +18,6 @@ if 'word_trans' not in st.session_state:
 if word_input:
   if st.session_state.word_trans == word_input:
     st.write('Esatto!')
-    st.session_state.word_pic = choice(words)
+    st.session_state.choice = choice(words)
   elif st.session_state.word_trans != word_input:
     st.write('Sbagliato!')
