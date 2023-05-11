@@ -2,15 +2,19 @@ import streamlit as st
 
 st.title('Adjectives')
 
-if 'counter' not in st.session_state:
-    st.session_state.counter = 3
-if st.session_state.counter < 1:
+if 'counter1' not in st.session_state or 'counter2' not in st.session.state :
+    st.session_state.counter1 = 3
+    st.session_state.counter2 = 3
+if st.session_state.counter1 == 0 or st.session_state.counter2 == 0:
     st.title('Game Over!')
     st.stop()
 
 click1 = st.button('counter 1')
 if click1:
-    st.session_state.counter -=1
+    st.session_state.counter1 -=1
+click2 = st.button('counter 2')
+if click2:
+    st.session_state.counter2 -=1
 
-st.write(st.session_state.counter)
-
+st.write(st.session_state.counter1)
+st.write(st.session_state.counter2)
