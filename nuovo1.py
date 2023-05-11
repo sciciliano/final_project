@@ -10,7 +10,7 @@ if st.session_state.counter < 1:
 
 click1 = st.button('counter 1')
 if click1:
-    st.session_state.counter1 -=1
+    st.session_state.counter -=1
 
-st.write(st.session_state.counter1)
+st.write(st.session_state.counter)
 
