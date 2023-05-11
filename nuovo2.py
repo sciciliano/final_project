@@ -9,7 +9,7 @@ st.write(word_pic)
 translator = Translator()
 word_trans = translator.translate(word_pic,src='it', dest= 'en')
 
-word_input = st.input_text('inserisci la tua traduzione: ','')
+word_input = st.text_input('inserisci la tua traduzione: ','')
 
 if (word_trans and word_input):
   if word_trans.text == word_input:
