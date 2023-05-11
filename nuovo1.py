@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title('Adjectives')
 
-if 'counter1' not in st.session_state or 'counter2' not in st.session.state :
+if 'counter1' not in st.session_state or 'counter2' not in st.session_state :
     st.session_state.counter1 = 3
     st.session_state.counter2 = 3
 if st.session_state.counter1 == 0 or st.session_state.counter2 == 0:
