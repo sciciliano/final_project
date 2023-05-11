@@ -7,6 +7,7 @@ word_input = st.text_input('inserisci la tua traduzione: ','')
 translator = Translator()
 words = ['mela','pera','pomodoro']
 word_pic = choice(words)
+st.write(word_pic)
 trans = translator.translate(word_pic,src='it', dest= 'en')
 if 'word_trans' not in st.session_state:
  st.session_state.word_trans = trans.text
