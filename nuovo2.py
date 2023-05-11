@@ -14,5 +14,6 @@ word_trans = translator.translate(st.session_state.word_pic,src='it', dest= 'en'
 if word_input:
   if word_trans.text == word_input:
     st.write('Esatto!')
+    st.session_state.word_pic = choice(words)
   elif word_trans.text != word_input:
     st.write('Sbagliato!')
