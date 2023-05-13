@@ -19,7 +19,6 @@ if 'word_trans' not in st.session_state:
 def new_word(new_word):
  st.session_state.choice = new_word
  word_pic = st.session_state.choice
- del pic_word
  pic_word=st.write(word_pic)
  trans = translator.translate(word_pic,src='it', dest= 'en')
  st.session_state.word_trans = trans.text
@@ -28,6 +27,7 @@ def new_word(new_word):
   
 if word_input:
   if st.session_state.word_trans == word_input:
+   del pic_word
    new_word(choice(words))
    st.write('Esatto!')
     
