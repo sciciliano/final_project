@@ -25,7 +25,7 @@ def new_word(new_word):
   
 if word_input:
   if st.session_state.word_trans == word_input:
-   pic_word=st.empty()
+   st.session_state.choice=st.empty()
    new_word(choice(words))
    st.write('Esatto!')
     
