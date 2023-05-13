@@ -17,6 +17,7 @@ if 'word_trans' not in st.session_state:
 def new_word(new_word):
  st.session_state.choice = new_word
  word_pic = st.session_state.choice
+ pic_word = st.empty()
  pic_word=st.write(word_pic)
  trans = translator.translate(word_pic,src='it', dest= 'en')
  st.session_state.word_trans = trans.text
