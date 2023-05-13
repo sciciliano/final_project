@@ -25,7 +25,8 @@ def new_word(new_word):
   
 if word_input:
   if st.session_state.word_trans == word_input:
-    st.write('Esatto!')
-    new_word(choice(words))
+   new_word(choice(words))
+   st.write('Esatto!')
+    
   elif st.session_state.word_trans != word_input:
     st.write('Sbagliato!')
