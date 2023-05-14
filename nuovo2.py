@@ -5,9 +5,10 @@ from googletrans import Translator
 
 st.title('Adjectives')
 
-if 'counter1' not in st.session_state:
+if 'counter1' not in st.session_state or 'counter2' not in st.session_state :
  st.session_state.counter1 = 3
-if st.session_state.counter1 < 1:
+ st.session_state.counter2 = 3
+if st.session_state.counter1 < 1 or st.session_state.counter2 < 1:
  st.title('Game Over!')
  st.stop()
 
@@ -44,12 +45,14 @@ if word_input:
   if 'antonym' not in st.session_state:
    st.session_state.antonym = datamuse[0]['word']
   st.write(st.session_state.antonym)
-  if word_ant != st.session_state.antonym:
-   st.session_state.counter1 -=1
-   st.write('Sbagliato!')
-  elif word_ant == st.session_state.antonym:
-   st.write('Esatto!')
-   new_word(choice(words))
-   st.write(st.session_state.choice)
+  if word_ant:
+   if word_ant != st.session_state.antonym:
+    st.session_state.counter2 -=1
+    st.write('Sbagliato!')
+   elif word_ant == st.session_state.antonym:
+    st.write('Esatto!')
+    new_word(choice(words))
+    st.write(st.session_state.choice)
 
 st.write(st.session_state.counter1)
+st.write(st.session_state.counter2)
