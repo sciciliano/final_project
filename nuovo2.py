@@ -37,4 +37,5 @@ if word_input:
   st.write('Esatto!')
     
  elif st.session_state.word_trans != word_input:
+  st.session_state.counter1 -=1
   st.write('Sbagliato!')
