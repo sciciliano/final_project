@@ -13,7 +13,7 @@ if st.session_state.counter1 < 1:
 word_input = st.text_input('inserisci la tua traduzione: ','')
 
 
-words = ['mela','pera','pomodoro']
+words = ['forte','alto','ricco']
 if 'choice' not in st.session_state:
  st.session_state.choice = choice(words)
 translator = Translator()
@@ -31,14 +31,14 @@ pic_word = st.write(word_pic)
 
   
 if word_input:
- if st.session_state.word_trans == word_input:
+ if st.session_state.word_trans != word_input:
+  st.session_state.counter1 -=1
+  st.write('Sbagliato!')
+ elif st.session_state.word_trans == word_input:
   new_word(choice(words))
   del pic_word
   word_pic = st.session_state.choice
   pic_word = st.write(word_pic)
   st.write('Esatto!')
-    
- elif st.session_state.word_trans != word_input:
-  st.session_state.counter1 -=1
-  st.write('Sbagliato!')
+
 st.write(st.session_state.counter1)
