@@ -1,4 +1,5 @@
 from random import choice
+import json,requests
 import streamlit as st
 from googletrans import Translator
 
@@ -39,6 +40,13 @@ if word_input:
   del pic_word
   word_pic = st.session_state.choice
   pic_word = st.write(word_pic)
-  st.write('Esatto!')
+  st.write('Esatto! Ora passiamo agli antonimi!')
+  keyword=st.text_input('scrivi qui l\' antonimo: ','')
+  url= 'https://api.datamuse.com/words?rel_ant=' + keyword + ''
+  response = requests.get(url)
+  datamuse = json.loads(response.text)
+  if 'antonym' not in st.session_state:
+   st.session_state.antonym = datamuse[0]['word']
+  st.write(st.session_state.antonym)
 
 st.write(st.session_state.counter1)
