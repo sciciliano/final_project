@@ -27,13 +27,12 @@ def new_word(new_word):
  st.session_state.word_trans = new_trans.text
 
 word_pic = st.session_state.choice
-pic_word = st.write(word_pic)
+pic_word, tr_word = st.write(word_pic), st.write(st.session_state.word_trans)
+
   
 if word_input:
  if st.session_state.word_trans == word_input:
   new_word(choice(words))
-  word_pic = st.session_state.choice
-  pic_word = st.write(word_pic)
   st.write('Esatto!')
     
  elif st.session_state.word_trans != word_input:
