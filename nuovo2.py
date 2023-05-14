@@ -24,7 +24,7 @@ pic_word = st.write(word_pic)
 if word_input:
  if st.session_state.word_trans == word_input:
   new_word(choice(words))
-  word_pic = st.session_state.choice
+  pic_word = st.write(word_pic)
   st.write('Esatto!')
     
  elif st.session_state.word_trans != word_input:
