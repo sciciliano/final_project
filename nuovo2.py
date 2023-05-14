@@ -46,7 +46,7 @@ if word_input:
   response = requests.get(url)
   datamuse = json.loads(response.text)
   if 'antonym' not in st.session_state:
-   st.session_state.antonym = datamuse[0]['word']
+   st.session_state.antonym = datamuse[1]['word']
   st.write(st.session_state.antonym)
 
 st.write(st.session_state.counter1)
