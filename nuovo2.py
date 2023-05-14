@@ -36,15 +36,20 @@ if word_input:
   st.session_state.counter1 -=1
   st.write('Sbagliato!')
  elif st.session_state.word_trans == word_input:
-  #new_word(choice(words))
-  #st.write(st.session_state.choice)
   st.write('Esatto! Ora passiamo agli antonimi!')
-  keyword=st.text_input('scrivi qui l\' antonimo: ','')
+  word_ant=st.text_input('scrivi qui l\' antonimo: ','')
   url= 'https://api.datamuse.com/words?rel_ant=' + st.session_state.word_trans + ''
   response = requests.get(url)
   datamuse = json.loads(response.text)
   if 'antonym' not in st.session_state:
    st.session_state.antonym = datamuse[0]['word']
   st.write(st.session_state.antonym)
+  if word_ant != st.session_state.antonym:
+   st.session_state.counter1 -=1
+   st.write('Sbagliato!')
+  elif word_ant == st.session_state.antonym:
+   st.write('Esatto!')
+   new_word(choice(words))
+   st.write(st.session_state.choice)
 
 st.write(st.session_state.counter1)
