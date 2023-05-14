@@ -4,6 +4,12 @@ from googletrans import Translator
 
 st.title('Adjectives')
 
+if 'counter1' not in st.session_state:
+ st.session_state.counter1 = 3
+if st.session_state.counter1 < 1:
+ st.title('Game Over!')
+ st.stop()
+
 word_input = st.text_input('inserisci la tua traduzione: ','')
 
 
