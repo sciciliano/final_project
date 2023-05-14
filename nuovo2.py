@@ -2,6 +2,8 @@ from random import choice
 import streamlit as st
 from googletrans import Translator
 
+st.title('Adjectives')
+
 word_input = st.text_input('inserisci la tua traduzione: ','')
 
 
