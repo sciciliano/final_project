@@ -20,6 +20,7 @@ def red_off():
 gui = tk.Tk()
 gui.geometry('800x400')
 gui.title('Unibz Chatbot')
+gui.iconbitmap('unibz.ico')
 gui.configure(bg='#2c4557')
 enter = tk.Entry(gui)
 switch_on = ttk.Button(gui, text= 'on', command = red_on)
