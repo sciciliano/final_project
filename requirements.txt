@@ -1,3 +1,10 @@
-googletrans==4.0.0-rc1
-audio-recorder-streamlit==0.0.8
+## install libraries for the microcontroller
+pimoroni
+python3-explorerhat
+
+## install Speech Recognition library
 SpeechRecognition
+
+## install text to speech library and pyaudio to detect the microphone in real time
+pyttsx3
+pyaudio
