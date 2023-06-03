@@ -36,7 +36,7 @@ def listen():
 gui = tk.Tk()
 gui.geometry('800x400')
 gui.title('Unibz Chatbot')
-gui.configure(bg='blue')
+gui.configure(bg='#2c4557')
 enter = tk.Entry(gui)
 switch_on = tk.Button(gui, text= 'Mic', command = listen)
 switch_on.place(x=380,y=300)
