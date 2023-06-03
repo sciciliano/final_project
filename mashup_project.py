@@ -34,8 +34,9 @@ def listen():
         pass
 
 gui = tk.Tk()
-gui.geometry('800x400')
 gui.title('Unibz Chatbot')
+gui.iconbitmap('unibz.ico')
+gui.geometry('800x400')
 gui.configure(bg='#2c4557')
 enter = tk.Entry(gui)
 switch_on = tk.Button(gui, text= 'Mic', command = listen)
