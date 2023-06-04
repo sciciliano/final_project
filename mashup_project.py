@@ -34,7 +34,7 @@ def listen():
         pass
 
 gui = tk.Tk()
-gui.title('Unibz Chatbot')
+gui.title('Mortino')
 gui.iconbitmap('unibz.ico')
 gui.geometry('800x400')
 gui.configure(bg='#2c4557')
