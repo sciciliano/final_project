@@ -2,6 +2,20 @@ import tkinter as tk
 import pyttsx3
 import speech_recognition as sr
 
+def say_open():
+    engine = pyttsx3.init()
+    voice = engine.getProperty('voices')
+    engine.setProperty('voice',voice[1].id)
+    engine.say('Command executed: Door open')
+    engine.runAndWait()
+
+def say_closed():
+    engine = pyttsx3.init()
+    voice = engine.getProperty('voices')
+    engine.setProperty('voice',voice[1].id)
+    engine.say('Command executed: Door closed')
+    engine.runAndWait()
+
 def listen():
     rec = sr.Recognizer()
     with sr.Microphone() as source:
@@ -13,13 +27,10 @@ def listen():
             text = 'something went wrong, sorry'
         except sr.RequestError:
             text = 'something went wrong, sorry'
-    engine = pyttsx3.init()
-    voice = engine.getProperty('voices')
-    engine.setProperty('voice',voice[1].id)
     if 'close' in text:
-        engine.say('Command executed: Door closed')
+        say_closed
     elif 'open' in text:
-        engine.say('Command executed: Door open')
+        say_open
     else:
         engine.say('sorry, I didn\'t understand')
     engine.runAndWait()
