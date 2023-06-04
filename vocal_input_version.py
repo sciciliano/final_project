@@ -36,7 +36,7 @@ def listen():
     engine.runAndWait()
 
 gui = tk.Tk()
-gui.title("UniBz Chatbot")
+gui.title("Mortino")
 gui.iconbitmap('unibz.ico')
 gui.geometry("800x400")
 gui.resizable(0,0)
